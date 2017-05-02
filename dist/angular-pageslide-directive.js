@@ -117,13 +117,13 @@
                     slider.style.transitionDuration = param.speed + 's';
                     slider.style.webkitTransitionDuration = param.speed + 's';
                     slider.style.height = param.size;
-                    slider.style.transitionProperty = 'top, bottom, left, right';
+                    slider.style.transitionProperty = 'top, bottom, left, right, width, height';
 
                     if (param.push) {
                         body.style.position = 'absolute';
                         body.style.transitionDuration = param.speed + 's';
                         body.style.webkitTransitionDuration = param.speed + 's';
-                        body.style.transitionProperty = 'top, bottom, left, right';
+                        body.style.transitionProperty = 'top, bottom, left, right, width, height';
                     }
 
                     if (param.container) {

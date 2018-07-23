@@ -121,7 +121,7 @@
                         body.style.position = 'absolute';
                         body.style.transitionDuration = param.speed + 's';
                         body.style.webkitTransitionDuration = param.speed + 's';
-                        body.style.transitionProperty = 'top, bottom, left, right';
+                        body.style.transitionProperty = 'top, bottom, left, right, width, height';
                     }
 
                     if (param.container) {
@@ -162,13 +162,33 @@
                                 slider.style.height = param.size;
                                 slider.style.width = '100%';
                                 slider.style.left = '0px';
-                                slider.style.right = '0px';
+                                if (scope.psOpen) {
+                                    slider.style.right = "0px";
+                                    if (param.push) {
+                                        body.style.right = param.size;
+                                        body.style.left = '-' + param.size;
+                                    }
+                                } else {
+                                    slider.style.right = '0px';
+                                }
                                 break;
                             case 'bottom':
                                 slider.style.height = param.size;
                                 slider.style.width = '100%';
                                 slider.style.left = '0px';
-                                slider.style.right = '0px';
+                                if (scope.psOpen) {
+                                    slider.style.left = "0px";
+                                    if (param.push) {
+                                        body.style.left = param.size;
+                                        body.style.right = '-' + param.size;
+                                    }
+                                } else {
+                                    slider.style.left = "-" + param.size;
+                                    if (param.push) {
+                                        body.style.left = '0px';
+                                        body.style.right = '0px';
+                                    }
+                                }
                                 break;
                         }
 
